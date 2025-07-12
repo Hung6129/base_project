@@ -1,38 +1,31 @@
-import 'dart:developer' as dev;
+import 'package:logger/logger.dart';
 
-final class AppLogger extends LoggerPort {
-  @override
-  void debug(String message, {Object? error, StackTrace? stackTrace}) {
-    dev.log(message, error: error, stackTrace: stackTrace);
+class AppLogger {
+  final Logger _logger = Logger(
+    printer: PrettyPrinter(methodCount: 0, colors: true, printEmojis: true),
+  );
+
+  d(dynamic message) {
+    _logger.d(message);
   }
 
-  @override
-  void error(String message, {Object? error, StackTrace? stackTrace}) {
-    dev.log(message, error: error, stackTrace: stackTrace);
+  void e(dynamic message) {
+    _logger.e(message);
   }
 
-  @override
-  void log(String message, {Object? error, StackTrace? stackTrace}) {
-    dev.log(message, error: error, stackTrace: stackTrace);
+  void i(dynamic message) {
+    _logger.i(message);
   }
 
-  @override
-  void warn(String message, {Object? error, StackTrace? stackTrace}) {
-    dev.log(message, error: error, stackTrace: stackTrace);
+  void w(dynamic message) {
+    _logger.w(message);
   }
-}
 
-/// Abstract class representing a logger port.
-abstract class LoggerPort {
-  /// Logs a message.
-  void log(String message, {Object? error, StackTrace? stackTrace});
+  void v(dynamic message) {
+    _logger.t(message);
+  }
 
-  /// Logs an error message.
-  void error(String message, {Object? error, StackTrace? stackTrace});
-
-  /// Logs a warning message.
-  void warn(String message, {Object? error, StackTrace? stackTrace});
-
-  /// Logs a debug message.
-  void debug(String message, {Object? error, StackTrace? stackTrace});
+  void E(dynamic message, Object? error, StackTrace? stackTrace) {
+    _logger.e(message, error: error, stackTrace: stackTrace);
+  }
 }

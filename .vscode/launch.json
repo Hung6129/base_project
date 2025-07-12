@@ -1,0 +1,86 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    
+        {
+            "name": "base_project",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "base_project (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "base_project (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "components_package",
+            "cwd": "packages/components_package",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "components_package (profile mode)",
+            "cwd": "packages/components_package",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "components_package (release mode)",
+            "cwd": "packages/components_package",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "core_package",
+            "cwd": "packages/core_package",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "core_package (profile mode)",
+            "cwd": "packages/core_package",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "core_package (release mode)",
+            "cwd": "packages/core_package",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "device_package",
+            "cwd": "packages/device_package",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "device_package (profile mode)",
+            "cwd": "packages/device_package",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "device_package (release mode)",
+            "cwd": "packages/device_package",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

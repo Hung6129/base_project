@@ -10,8 +10,51 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_gen: ^5.10.0
+  get_it: ^8.0.3
+  injectable: ^2.5.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  build_runner: ^2.5.4
+  injectable_generator: ^2.7.0
+  flutter_gen_runner: ^5.10.0
+
+flutter:
+  assets:
+    - assets/fonts/
+    - assets/fonts/Roboto_Mono/
+    - assets/images/
+  fonts:
+    - family: RobotoMono
+      fonts:
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-Black.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-BlackItalic.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-Bold.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-BoldItalic.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-ExtraLight.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-ExtraLightItalic.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-Italic.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-Light.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-LightItalic.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-Medium.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-MediumItalic.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-Regular.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-SemiBold.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-SemiBoldItalic.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-Thin.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-ThinItalic.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf
+
+flutter_gen:
+  output: lib/gen/ # Optional (default: lib/gen/)
+  line_length: 80 # Optional (default: 80)
+  # Optional
+  integrations:
+    image: true
+    flutter_svg: true
+
+scripts: derry.yaml
