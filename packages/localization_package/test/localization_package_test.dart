@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:components_package/components_package.dart';
+import 'package:localization_package/localization_package.dart';
 
 void main() {
   test('adds one to input values', () {

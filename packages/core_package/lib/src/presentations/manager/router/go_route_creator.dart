@@ -50,7 +50,6 @@ abstract class AppGoRouteData<T> extends GoRouteData {
 
   AppGoRouteData(this.creator, {this.pageKey, this.extra});
 
-  @override
   String get location => creator.$location(this);
 
   @override
@@ -61,26 +60,23 @@ abstract class AppGoRouteData<T> extends GoRouteData {
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) {
     return creator.pageBuilder?.call(context, this) ??
-        super.buildPage(context, state);
+        super.buildPage(
+          context,
+          state,
+        );
   }
 
   /// `go` is a method that is used to navigate to a route.
-  @override
   void go(BuildContext context) => context.go(location, extra: this);
 
   /// Pushing a new route onto the stack.
-  @override
-  Future<E?> push<E>(BuildContext context) =>
-      context.push<E>(location, extra: this);
+  Future<E?> push<E>(BuildContext context) => context.push<E>(location, extra: this);
 
   /// Replacing the current route with the new route.
-  @override
-  void replace(BuildContext context) =>
-      context.pushReplacement(location, extra: this);
+  void replace(BuildContext context) => context.pushReplacement(location, extra: this);
 
   /// Pop the current route.
-  void pop<E extends Object?>(BuildContext context, [T? result]) =>
-      context.pop(result);
+  void pop<E extends Object?>(BuildContext context, [T? result]) => context.pop(result);
 
   @override
   FutureOr<String?> redirect(BuildContext context, GoRouterState state) async {
@@ -94,6 +90,5 @@ class NoOpPage extends Page<void> {
   const NoOpPage();
 
   @override
-  Route<void> createRoute(BuildContext context) =>
-      throw UnsupportedError('Should never be called');
+  Route<void> createRoute(BuildContext context) => throw UnsupportedError('Should never be called');
 }

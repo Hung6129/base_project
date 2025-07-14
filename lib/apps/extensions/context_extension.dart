@@ -1,6 +1,5 @@
 import 'package:base_project/apps/di/app_config.dart';
 import 'package:base_project/apps/routes/app_routes.dart';
-import 'package:components_package/components_package.dart';
 import 'package:flutter/material.dart';
 
 extension ContextExtension on BuildContext {

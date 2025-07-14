@@ -25,9 +25,7 @@ RegExp patternToRegExp(String pattern, List<String> parameters) {
     }
     final name = match[1]!;
     final optionalPattern = match[2];
-    final regex = optionalPattern != null
-        ? _escapeGroup(optionalPattern, name)
-        : '(?<$name>[^/]+)';
+    final regex = optionalPattern != null ? _escapeGroup(optionalPattern, name) : '(?<$name>[^/]+)';
     buffer.write(regex);
     parameters.add(name);
     start = match.end;
@@ -44,10 +42,7 @@ RegExp patternToRegExp(String pattern, List<String> parameters) {
 }
 
 String _escapeGroup(String group, [String? name]) {
-  final escapedGroup = group.replaceFirstMapped(
-    RegExp(r'[:=!]'),
-    (Match match) => '\\${match[0]}',
-  );
+  final escapedGroup = group.replaceFirstMapped(RegExp(r'[:=!]'), (Match match) => '\\${match[0]}');
   if (name != null) {
     return '(?<$name>$escapedGroup)';
   }
@@ -88,14 +83,8 @@ String patternToPath(String pattern, Map<String, String> pathParameters) {
 ///
 /// The [parameters] should originate from the call to [patternToRegExp] that
 /// creates the [RegExp].
-Map<String, String> extractPathParameters(
-  List<String> parameters,
-  RegExpMatch match,
-) {
-  return <String, String>{
-    for (int i = 0; i < parameters.length; ++i)
-      parameters[i]: match.namedGroup(parameters[i])!,
-  };
+Map<String, String> extractPathParameters(List<String> parameters, RegExpMatch match) {
+  return <String, String>{for (int i = 0; i < parameters.length; ++i) parameters[i]: match.namedGroup(parameters[i])!};
 }
 
 /// Concatenates two paths.
@@ -125,9 +114,7 @@ String canonicalUri(String loc) {
   // /profile/ => /profile
   // / => /
   // /login?from=/ => login?from=/
-  canon = canon.endsWith('/') && canon != '/' && !canon.contains('?')
-      ? canon.substring(0, canon.length - 1)
-      : canon;
+  canon = canon.endsWith('/') && canon != '/' && !canon.contains('?') ? canon.substring(0, canon.length - 1) : canon;
 
   // /login/?from=/ => /login?from=/
   // /?from=/ => /?from=/
